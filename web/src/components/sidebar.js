@@ -30,7 +30,7 @@ const Sidebar = ({ tags }) => {
       </Typography>
       {tags &&
         tags.map(tag => {
-          return <p key={tag.tagName}>{tag.tagName}</p>;
+          return <p key={tag.name}>{tag.name}</p>;
         })}
     </Grid>
   );

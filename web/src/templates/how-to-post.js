@@ -31,8 +31,8 @@ export const query = graphql`
         youTubeCaption
       }
       productList {
-        productName
-        productImage {
+        name
+        image {
           asset {
             fluid {
               ...GatsbySanityImageFluid_withWebp
@@ -44,7 +44,7 @@ export const query = graphql`
       _rawHowTobody(resolveReferences: { maxDepth: 5 })
       time
     }
-    relatedArticle: sanityHowToArticle(tags: { elemMatch: { tagName: { in: $tag } } }) {
+    relatedArticle: sanityHowToArticle(tags: { elemMatch: { name: { in: $tag } } }) {
       id
       publishedAt
       heroImage {
@@ -65,8 +65,8 @@ export const query = graphql`
         youTubeCaption
       }
       productList {
-        productName
-        productImage {
+        name
+        image {
           asset {
             fluid {
               ...GatsbySanityImageFluid_withWebp
@@ -76,7 +76,7 @@ export const query = graphql`
         }
       }
       tags {
-        tagName
+        name
       }
       _rawHowTobody(resolveReferences: { maxDepth: 5 })
       time

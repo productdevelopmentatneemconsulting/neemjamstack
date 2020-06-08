@@ -216,13 +216,13 @@ const Main = ({ productList, _rawHowTobody }) => {
           <div key={p.productName} className={classes.markdown}>
             <Img
               fluid={{
-                ...p.productImage.asset.fluid,
+                ...p.image.asset.fluid,
                 sizes:
                   "(max-width: 512px) 20vw, (max-width: 768px) 35vw, (max-width: 1280px) 50vw, (max-width: 1680px) 70vw, 90vw"
               }}
-              alt={p.productImage.asset.alt}
+              alt={p.image.asset.alt}
             />
-            <div>{p.productName}</div>
+            <div>{p.name}</div>
           </div>
         ))}
       </EmblaCarousel>
