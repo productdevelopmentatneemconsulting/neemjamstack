@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "FixedJamtraining"
+    "name": "neemjamstack"
   },
   "api": {
-    "projectId": "bt91dc1l",
+    "projectId": "1ljvprvr",
     "dataset": "production"
   },
   "plugins": [
