@@ -13,7 +13,7 @@ const Navbar = ({ navlinks }) => {
   const classes = useStyles();
   return (
     <Header
-      brand="Platform Liberty"
+      brand="Platform Liberty 1"
       color="dark"
       rightLinks={
         <List className={classes.list}>
