@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
-import author from './documents/author'
+import authors from './documents/author'
 import blogAuthor from './documents/blogAuthor'
 import config from './documents/config'
 import tool from './documents/tool'
@@ -89,7 +89,7 @@ export default createSchema({
     navigation,
     textBlock,
     tool,
-    author,
+    authors,
 
     navLink,
     navItem,
