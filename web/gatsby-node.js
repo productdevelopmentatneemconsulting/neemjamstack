@@ -34,7 +34,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
               current
             }
             tags {
-              name
+              tagName
             }
           }
         }
@@ -65,7 +65,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const tagVal = [];
     const { tags = [] } = edge.node;
     edge.node.tags.forEach((tag, index) => {
-      tagVal.push(tag.name);
+      tagVal.push(tag.tagName);
     });
     console.log("tagVal", tagVal);
     createPage({

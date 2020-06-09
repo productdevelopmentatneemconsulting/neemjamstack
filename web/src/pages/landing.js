@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles);
 
 export const query = graphql`
   query HomePageQuery {
-    heroSlider: sanityArticleSlider(slideType: { name: { eq: "Hero Slider - Type 1" } }) {
+    heroSlider: sanityArticleSlider(slideType: { sliderName: { eq: "Hero Slider - Type 1" } }) {
       slides {
         ... on SanityFeatureArticle {
           id
@@ -63,7 +63,7 @@ export const query = graphql`
         }
       }
     }
-    tileSlider: sanityArticleSlider(slideType: { name: { eq: "Tile Slider - Type 1" } }) {
+    tileSlider: sanityArticleSlider(slideType: { sliderName: { eq: "Tile Slider - Type 1" } }) {
       slides {
         ... on SanityFeatureArticle {
           id

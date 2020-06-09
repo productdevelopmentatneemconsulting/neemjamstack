@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Sidebar = ({ tags }) => {
+const Sidebar = () => {
   const classes = useStyles();
 
   return (
@@ -28,10 +28,6 @@ const Sidebar = ({ tags }) => {
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Tags
       </Typography>
-      {tags &&
-        tags.map(tag => {
-          return <p key={tag.name}>{tag.name}</p>;
-        })}
     </Grid>
   );
 };

@@ -6,7 +6,7 @@ const Article = loadable(() => import("../components/article"));
 import Layout from "../containers/layout";
 
 export const query = graphql`
-  query MyQuery($id: String!, $tag: [String]!) {
+  query MyQuery($id: String!) {
     __typename
 
     howTo: sanityHowToArticle(id: { eq: $id }) {
@@ -29,54 +29,6 @@ export const query = graphql`
       heroVideo {
         url
         youTubeCaption
-      }
-      productList {
-        name
-        image {
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid_withWebp
-            }
-          }
-          alt
-        }
-      }
-      _rawHowTobody(resolveReferences: { maxDepth: 5 })
-      time
-    }
-    relatedArticle: sanityHowToArticle(tags: { elemMatch: { name: { in: $tag } } }) {
-      id
-      publishedAt
-      heroImage {
-        asset {
-          fluid {
-            ...GatsbySanityImageFluid_withWebp
-          }
-        }
-        alt
-      }
-      headline
-      subheading
-      slug {
-        current
-      }
-      heroVideo {
-        url
-        youTubeCaption
-      }
-      productList {
-        name
-        image {
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid_withWebp
-            }
-          }
-          alt
-        }
-      }
-      tags {
-        name
       }
       _rawHowTobody(resolveReferences: { maxDepth: 5 })
       time

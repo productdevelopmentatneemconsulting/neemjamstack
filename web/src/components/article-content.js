@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
 import BlockContent from "@sanity/block-content-to-react";
-import EmblaCarousel from "./embelaCarousel";
 import Img from "gatsby-image";
 
 const useStyles = makeStyles(theme => ({
@@ -172,6 +171,19 @@ const blockTypeDefaultSerializers = {
         </figure>
       );
     },
+    youTube: ({ node }) => {
+      return (
+        <iframe
+          src={node.url}
+          title={node.youTubeCaption}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          frameBorder="0"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
+        />
+      );
+    },
     productReference: props => {
       const node = props.node;
 
@@ -201,7 +213,7 @@ const blockTypeDefaultSerializers = {
   }
 };
 
-const Main = ({ productList, _rawHowTobody }) => {
+const Main = ({ _rawHowTobody }) => {
   console.log("_rawHowTobody", _rawHowTobody);
   const classes = useStyles();
 
@@ -211,21 +223,6 @@ const Main = ({ productList, _rawHowTobody }) => {
       <section className={classes.richText}>
         <BlockContent blocks={_rawHowTobody} serializers={blockTypeDefaultSerializers} />
       </section>
-      <EmblaCarousel>
-        {productList.map(p => (
-          <div key={p.productName} className={classes.markdown}>
-            <Img
-              fluid={{
-                ...p.image.asset.fluid,
-                sizes:
-                  "(max-width: 512px) 20vw, (max-width: 768px) 35vw, (max-width: 1280px) 50vw, (max-width: 1680px) 70vw, 90vw"
-              }}
-              alt={p.image.asset.alt}
-            />
-            <div>{p.name}</div>
-          </div>
-        ))}
-      </EmblaCarousel>
     </Grid>
   );
 };
